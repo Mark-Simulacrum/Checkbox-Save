@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Checkbox Saving</title>
+        <style>
+            div {
+                //border: 1px solid black;
+            }
+
+            html.show-all div {
+                display: block;
+            }
+            
+            html.show-checked div:not(.checked) {
+                display: none;
+            }
+            
+            html.show-unchecked div.checked {
+                display: none;
+            }
+            
+            body > div {
+                margin: 0;
+                margin-left: 18px;
+            }
+            
+            body > div input {
+                margin-left: -18px;
+            }
+            
+            .code {
+            }
+        </style>
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <select id="what_to_show">
+            <option value="show-all">Show All</option>
+            <option value="show-checked">Show Checked</option>
+            <option value="show-unchecked">Show Unchecked</option>
+        </select>
+        
+        <p>Checked boxes indicate bugs, style violations, and other
+        problems detected during code review. Most of them can be
+        easily located by searching through the patch file for
+        the corresponding keywords or expressions.</p>
+
+        <div>
+            <input type='checkbox' id='c1' />
+            
+            Constructors that may be used with a single parameter should be
+            explicit unless silent type conversion is desired. If silent type
+            conversion is desired, non-explicit constructor declaration should
+            have a comment about the conversion.
+        </div>
+        <div>
+            <input type='checkbox' id='c2' />
+
+            All non-static class data members must be initialized [in all
+            class constructors]. You may skip data members that have
+            reasonable default constructors.
+
+        </div>
+        <div>
+            <input type='checkbox' id='p1' />
+
+            Make pointers nil after delete unless they clearly go out of scope
+            right after delete. For example, pointer deletions in small and
+            simple destructors are excepted.
+
+        </div>
+        <div>
+            <input type='checkbox' id='p2' />
+
+            Do not check pointers for nil before deleting them. C++ does that
+            for you.
+
+        </div>
+        <div>
+            <input type='checkbox' id='p3' />
+
+            Use (foo) and (!foo) instead of (foo != 0) and (foo == 0)
+            when testing pointers for being nil.
+
+        </div>
+        <div>
+            <input type='checkbox' id='b1' />
+
+            Use (foo) and (!foo) instead of (foo == true), (foo == false), and
+            such when testing boolean expressions for being true/false.
+
+        </div>
+        <div>
+            <input type='checkbox' id='v1' />
+
+            Avoid multiple virtual methods with identical names. Correctly
+            overriding them is error-prone.
+
+        </div>
+        <div>
+            <input type='checkbox' id='patch1' />
+
+            Use unified patch with at least 20 lines of context (-U 20).
+
+        </div>
+        <div>
+            <input type='checkbox' id='patch2' />
+
+            Use --show-c-function or equivalent where supported.
+
+        </div>
+        <div>
+            <input type='checkbox' id='patch3' />
+
+            A patch should not have whitespace-only changes unless they are
+            intentional and in patch scope.
+
+        </div>
+        <div>
+            <input type='checkbox' id='patch4' />
+
+            A patch should not have changes that only add or remove empty
+            lines.
+
+        </div>
+        <div>
+            <input type='checkbox' id='s1' />
+
+            Use camelCaseNames when the code around your changes uses
+            such names. Avoid adding names_with_underscores in that case.
+
+        </div>
+        <div>
+            <input type='checkbox' id='s2' />
+
+            Use names_with_underscores when the code around your changes uses
+            such names. Avoid camelCase names in that case.
+
+        </div>
+        <div>
+            <input type='checkbox' id='s2p1' />
+
+            Do not prefix variable and data member names with their types
+            (a.k.a. Hungarian notation altnough the original approach under
+            that name was <a
+            href="http://www.joelonsoftware.com/articles/Wrong.html">reportedly</a>
+            misunderstood and misused). Anyway, just name the thing; its type
+            may change and is rarely critical for its purpose.
+
+        </div>
+        <div>
+            <input type='checkbox' id='s3' />
+
+            Avoid adding {} for single-line statements like
+
+            <pre class="code">
+                if (foo) {
+                    bar();
+                }
+            </pre>
+
+        </div>
+        <div>
+            <input type='checkbox' id='s4' />
+
+            Order class sections as such: public, protected, and private.
+
+        </div>
+        <div>
+            <input type='checkbox' id='s5' />
+
+            Within each public/protected/private section, declare methods
+            before data members.
+
+        </div>
+        <div>
+            <input type='checkbox' id='s6' />
+
+            Within each public/protected/private section, declare static
+            members before non-static ones.
+
+        </div>
+        <div>
+            <input type='checkbox' id='s7' />
+
+            Use const when you can.
+
+        </div>
+        <div>
+            <input type='checkbox' id='s8' />
+
+            Declare local variables as close to their first use, including
+            inside if-statement conditions when possible: if (const char *foo = ...).
+
+        </div>
+
+        <p>This is an experimental interface. The interface itself and
+        even the issue IDs may change.</p>
+</html>
